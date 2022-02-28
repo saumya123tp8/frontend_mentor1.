@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Poppins:wght@200&display=swap');
+/*
+Mobile: 375px
+- Desktop: 1440px
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img {
+       max-width: 100%;
+}
+ul{
+    list-style-type:none;
+}
+:root{
+
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --main-BG: hsl(217, 54%, 11%);
+    --card-BG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+img {
+    max-width: 100%;
+}
+ul{
+ list-style-type:none;
+}
+p{
+    font-weight: 300px;
+}
+.container{
+    padding: 1.25rem;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+.container h2{
+    color: #fff;
+    margin: 1rem 0.5rem 0.5rem 0;
+}
+.container ul{
+    display :flex ;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+.container ul li{
+    display: flex;
+    align-items: center;
+}
+
+.container ul li img{
+    margin-right: 0.5rem;
+}
+.container ul li:first-child{
+    color:hsl(178, 100%, 50%);
+}
+.avatar{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.container .avatar img{
+    width: 3.5rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+.container .avatar p span{
+    color: #fff;
+    font-weight: 400;
+}
+.container .main-image img{
+    position: relative;
+    /* z-index: 999; */
+}
+.container .main-image {
+    position: relative;
+    
+    top: 0px;
+} 
+
+.container .main-image div{
+    position: absolute;
+    top: 0px;
+    background-color:hsl(178, 100%, 50% );
+     width: 100%;
+     height:100%;
+     z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.container .main-image div:hover{
+    opacity: 2;
+    cursor: pointer;
+}
+.container .main-image div img{
+    position: absolute;
+    top: 42.5%;
+    left: 42.5%;
+    transform: translate(-50% -50%);
+}
+.container .avatar p span:hover{
+    color: cyan;
+    cursor: pointer;
+}
+.container h2:hover{
+    color: cyan;
+    cursor: pointer;
+}
+body{
+    font-family: 'Outfit', sans-serif;
+    Font-size : 18px;
+    background-color: hsl(217, 54%, 11%);
+    color:  hsl(0, 0%, 100%,60%);
+    padding:1.25rem;
+    /* height: 100%; */
+}
+
+@media(min-width:500px){
+    .container{
+        width: 450px;
+        margin:0 auto 1rem;
+    }
+}
