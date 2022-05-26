@@ -144,6 +144,10 @@ app.post("/delete",(req,res)=>{
     
 })
 
-app.listen(4000,()=>{
-    console.log("your server is now running at port 4000")
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 4000;
+  }
+app.listen(port,()=>{
+    console.log(`your server is now running at port ${port}`)
 })
