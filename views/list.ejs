@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <title>To Do List</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          /* width: 80%; */
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        .box{
+    /* background: #000;
+    border: 2px solid red;
+    width: 90vmax;
+    padding-left: 0vmax;
+    padding-right: 0vmax; */
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgb(0 0 0 / 30%);
+}
+input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 160px;
+}
+        </style>
 </head>
 <body>
    <div class="box" id="heading">
@@ -11,23 +51,33 @@
        <h1 > <%= title %> </h1>
        
    </div>
+<div class="box">
 
-   <div class="box">
-
-           <!-- <% for(var i =0;i<newlistitem.length;i++){%>
-               <div class="item">
-                   <input type="checkbox">
-                   <p><%=newlistitem[i].name%></p>
-               
-                </div>
-
-            <%}%> -->
-
-            <%newlistitem.forEach(function(element){%>
+    <table>
+        <tr>
+            <th>Status</th>
+            <th>Title</th>
+            <th>start date</th>
+            <th>end date</th>
+            <th>priority</th>
+        </tr>
+    </table>
+</div>
+    <div class="box">
+        <%newlistitem.forEach(function(element){%>
                 <form action="/delete" method="post">
                     <div class="item">
-                        <input type="checkbox" value="<%=element._id%>" name="delitem" onchange="this.form.submit()">
-                        <p><%=element.name%></p>
+                        <!-- <input type="checkbox" value="<%=element._id%>" name="delitem" onchange="this.form.submit()"> -->
+                        <table>
+                            <tr>
+                              <td><input type="checkbox" value="<%=element._id%>" name="delitem" onchange="this.form.submit()"></td>
+                              <td><p><%=element.name%></p></td>
+                              <td><p><%=element.name%></p></td>
+                              <td><p><%=element.name%></p></td>
+                              <td><p><%=element.name%></p></td>
+                            </tr>
+                          </table>
+                        <!-- <p><%=element.name%></p> -->
                     </div>
                 <input type="hidden" name="listname" value="<%=title%>">
             </input>
@@ -35,7 +85,10 @@
            <%})%>
             
             <form class="item" action="/" method="post">
-                <input type="text" name="newitem" placeholder="New item">
+                <input type="text" name="Title" placeholder="Title">
+                <input type="text" name="Start date" placeholder="Start date">
+                <input type="text" name="End Date" placeholder="End date">
+                <input type="text" name="priority" placeholder="priority">
                 <button type="submit" name="list" value=<%=title%>>+</button>
             </form>
         </div>
